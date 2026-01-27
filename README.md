@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Monster Pizza v Shopping Palace
 
-## Getting Started
+Moderný landing page pre pizzeriu Monster Pizza v Shopping Palace, Bratislava.
 
-First, run the development server:
+## Tech Stack
+
+- **Next.js 16** (App Router) + TypeScript
+- **TailwindCSS v4** - styling
+- **Framer Motion** - animácie
+- **Lucide React** - ikony
+- **next/image** - optimalizácia obrázkov
+
+## Inštalácia
+
+```bash
+npm install
+```
+
+## Vývoj
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Otvorte [http://localhost:3000](http://localhost:3000) v prehliadači.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+## Produkcia
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Štruktúra projektu
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+monster-pizza/
+├── public/
+│   └── images/
+│       └── gallery/          # Obrázky galérie (img01.jpg - img09.jpg)
+├── src/
+│   ├── app/
+│   │   ├── globals.css       # Globálne štýly
+│   │   ├── layout.tsx        # Root layout s SEO
+│   │   ├── page.tsx          # Hlavná stránka
+│   │   ├── robots.ts         # robots.txt
+│   │   └── sitemap.ts        # sitemap.xml
+│   ├── components/
+│   │   ├── Header.tsx        # Navigácia (sticky, transparent → solid)
+│   │   ├── Hero.tsx          # Hero sekcia
+│   │   ├── PromoBar.tsx      # Promo banner
+│   │   ├── About.tsx         # O nás + benefit karty
+│   │   ├── Gallery.tsx       # Galéria obrázkov
+│   │   ├── LightboxModal.tsx # Lightbox pre galériu
+│   │   ├── Contact.tsx       # Kontaktná sekcia
+│   │   └── Footer.tsx        # Pätička
+│   └── data/
+│       ├── contactInfo.ts    # Kontaktné údaje
+│       ├── galleryImages.ts  # Zoznam obrázkov
+│       └── navLinks.ts       # Navigačné odkazy
+└── package.json
+```
 
-## Deploy on Vercel
+## Obrázky
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Nahrajte svoje obrázky do `public/images/gallery/` s názvami:
+- img01.jpg, img02.jpg, ... img09.jpg
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Konfigurácia
+
+### Kontaktné údaje
+Upravte súbor `src/data/contactInfo.ts`:
+- Telefón
+- Email
+- Instagram URL
+- Google Maps URL
+- Adresa
+
+### SEO
+Upravte metadata v `src/app/layout.tsx` a JSON-LD schema v `src/app/page.tsx`.
+
+## Deploy na Vercel
+
+```bash
+npx vercel
+```
+
+Alebo pripojte GitHub repozitár na [vercel.com](https://vercel.com).
+
+## Licencia
+
+© 2026 Monster Pizza v Shopping Palace
