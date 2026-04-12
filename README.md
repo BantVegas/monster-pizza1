@@ -53,8 +53,6 @@ monster-pizza/
 │   ├── components/
 │   │   ├── Header.tsx        # Navigácia (sticky, transparent → solid)
 │   │   ├── Hero.tsx          # Hero sekcia
-│   │   ├── PromoBar.tsx      # Promo banner
-│   │   ├── About.tsx         # O nás + benefit karty
 │   │   ├── Gallery.tsx       # Galéria obrázkov
 │   │   ├── LightboxModal.tsx # Lightbox pre galériu
 │   │   ├── Contact.tsx       # Kontaktná sekcia
@@ -75,9 +73,7 @@ Nahrajte svoje obrázky do `public/images/gallery/` s názvami:
 
 ### Kontaktné údaje
 Upravte súbor `src/data/contactInfo.ts`:
-- Telefón
 - Email
-- Instagram URL
 - Google Maps URL
 - Adresa
 

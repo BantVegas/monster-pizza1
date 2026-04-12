@@ -1,73 +1,77 @@
+/** Galéria ako na monsterpizza.eu/galeria — rovnaké položky a cesty k /images/* */
 export interface GalleryImage {
   src: string;
   alt: string;
   title: string;
   description: string;
-  allergens?: string;
 }
 
 export const galleryImages: GalleryImage[] = [
-  { 
-    src: '/images/img01.jpg', 
-    alt: 'Monster Pizza – pizza so salámou a syrom',
-    title: 'Salámová pizza',
-    description: 'Klasická pizza s pikantnou salámou, mozzarellou a cheddarom na paradajkovom základe.',
-    allergens: 'Alergény: 1 (lepok), 7 (mlieko)'
+  {
+    title: 'Pikantná pizza s klobásou',
+    description:
+      'Bohatá pikantná pizza s klobásou, červenou cibuľou a cherry paradajkami. Chrumkavá kôrka a roztopený syr — presne taká, akú ju milujete.',
+    src: '/images/pizza-mexicana.jpg',
+    alt: 'Monster Pizza - pikantná pizza s klobásou a červenou cibuľou v krabici',
   },
-  { 
-    src: '/images/2.jpg', 
-    alt: 'Monster Pizza – pizza so šunkou a kukuricou',
-    title: 'Šunková s kukuricou',
-    description: 'Jemná šunka, sladká kukurica, cherry paradajky a mozzarella na paradajkovom základe.',
-    allergens: 'Alergény: 1 (lepok), 7 (mlieko)'
+  {
+    title: 'Smotanová pizza so šunkou',
+    description:
+      'Jemná smotanová pizza so šunkou, červenou cibuľou a čerstvou pažítkou. Krémový základ, ktorý si zamilujete od prvého kúsku.',
+    src: '/images/pizza-smotanova.jpg',
+    alt: 'Monster Pizza - smotanová pizza so šunkou, cibuľou a pažítkou',
   },
-  { 
-    src: '/images/3.png', 
-    alt: 'Monster Pizza – pizza so šampiňónmi',
-    title: 'Šampiňónová pizza',
-    description: 'Čerstvé šampiňóny, kukurica, mozzarella a smotanový základ pre jemnú chuť.',
-    allergens: 'Alergény: 1 (lepok), 7 (mlieko)'
+  {
+    title: 'Vegetariánska s rukolou',
+    description:
+      'Čerstvá vegetariánska pizza s rukolou, cherry paradajkami, kukuricou a balzamikovým krémom. Ľahká, svieža a plná chutí.',
+    src: '/images/pizza-vegetarianska.jpg',
+    alt: 'Monster Pizza - vegetariánska pizza s rukolou, paradajkami a balzamikom',
   },
-  { 
-    src: '/images/4.png', 
-    alt: 'Monster Pizza – pizza s klobásou a cibuľou',
-    title: 'Klobásová pizza',
-    description: 'Domáca klobása, červená cibuľa, paprika a mozzarella na paradajkovom základe.',
-    allergens: 'Alergény: 1 (lepok), 7 (mlieko)'
+  {
+    title: 'Dvojica pizz na tanieroch',
+    description:
+      'Vegetariánska pizza s rukolou vedľa syrovej pizze so šampiňónmi. Servírované na tanieroch priamo v našej prevádzke v Shopping Palace.',
+    src: '/images/pizza-dvojica.jpg',
+    alt: 'Monster Pizza - dve pizze na tanieroch v prevádzke Shopping Palace Bratislava',
   },
-  { 
-    src: '/images/5.png', 
-    alt: 'Monster Pizza – pizza s červenou cibuľou',
-    title: 'Slanina s pažítkou',
-    description: 'Chrumkavá slanina, červená cibuľa, čerstvá pažítka na smotanovom základe.',
-    allergens: 'Alergény: 1 (lepok), 7 (mlieko)'
+  {
+    title: 'Sedliacka pizza',
+    description:
+      'Pomodoro, mozzarella, červená cibuľa, saláma, klobása, slanina a štipka pikantných paprík. Poctivá „sedliacka“ chuť priamo z krabice.',
+    src: '/images/pizza-sedliacka.png',
+    alt: 'Monster Pizza - Sedliacka pizza v krabici s klobásou, salámou, slaninou, červenou cibuľou a syrom',
   },
-  { 
-    src: '/images/6.png', 
-    alt: 'Monster Pizza – pizza so syrom a kukuricou',
-    title: 'Quattro Formaggi',
-    description: 'Štyri druhy syra – mozzarella, niva, eidam a cheddar s kukuricou.',
-    allergens: 'Alergény: 1 (lepok), 7 (mlieko)'
+  {
+    title: 'Slovenský posúch',
+    description:
+      'Smotanový základ, syr, oravská slanina a jarná cibuľka. Slovenská klasika v podaní Monster Pizza.',
+    src: '/images/pizza-posuch.jpg',
+    alt: 'Monster Pizza - Slovenský posúch so smotanovým základom a oravskou slaninou',
   },
-  { 
-    src: '/images/7.jpg', 
-    alt: 'Monster Pizza – pizza s rukolou a balzamicom',
-    title: 'Rukola s balzamicom',
-    description: 'Čerstvá rukola, cherry paradajky, balzamikový krém a parmezán na paradajkovom základe.',
-    allergens: 'Alergény: 1 (lepok), 7 (mlieko)'
+  {
+    title: 'Bryndzová pizza',
+    description:
+      'Smotanový základ, oravská slanina, bryndza a jarná cibuľka. Jedinečná kombinácia slovenskej tradície a talianskej pizze.',
+    src: '/images/pizza-bryndzova.jpg',
+    alt: 'Monster Pizza - Bryndzová pizza s oravskou slaninou a jarnou cibuľkou',
   },
-  { 
-    src: '/images/8.png', 
-    alt: 'Monster Pizza – náš tím',
-    title: 'Náš tím',
-    description: 'Spoznajte ľudí, ktorí pre vás s láskou pripravujú každú pizzu.',
-    allergens: undefined
+  {
+    title: 'Margherita pizza',
+    description: 'Jednoduchá, no dokonalá — pomodoro a syr. Klasika, ktorá nikdy nezklame.',
+    src: '/images/pizza-margherita.jpg',
+    alt: 'Monster Pizza - Margherita pizza s pomodoro a syrom',
   },
-  { 
-    src: '/images/download.jpg', 
-    alt: 'Monster Pizza – Grand Opening akcia',
-    title: 'Akcia do 14:00',
-    description: 'Všetky pizze za jednu cenu 6,90 € + Kofola zadarmo! Platí denne do 14:00.',
-    allergens: undefined
+  {
+    title: 'Salámová Classic pizza',
+    description: 'Pomodoro, syr a peperóny. Obľúbená voľba našich zákazníkov.',
+    src: '/images/pizza-salamova.jpg',
+    alt: 'Monster Pizza - Salámová Classic pizza s peperónmi',
+  },
+  {
+    title: 'Šunková pizza',
+    description: 'Pomodoro, šunka a syr. Jednoduchá a chutná pizza pre celú rodinu.',
+    src: '/images/pizza-sunkova.jpg',
+    alt: 'Monster Pizza - Šunková pizza s pomodoro a šunkou',
   },
 ];

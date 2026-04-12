@@ -57,13 +57,13 @@ export default function LightboxModal({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/92 backdrop-blur-md"
           onClick={onClose}
         >
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 z-10 text-white/80 hover:text-white p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+            className="absolute right-4 top-4 z-10 rounded-full border border-[#c9a227]/40 bg-black/50 p-2 text-[#e8c547] transition-colors hover:border-[#e8c547] hover:bg-black/70"
             aria-label="Zavrieť"
           >
             <X size={28} />
@@ -75,7 +75,7 @@ export default function LightboxModal({
               e.stopPropagation();
               onPrev();
             }}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 text-white/80 hover:text-white p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+            className="absolute left-4 top-1/2 z-10 -translate-y-1/2 rounded-full border border-[#c9a227]/35 bg-black/45 p-3 text-[#e8c547] transition-colors hover:border-[#e8c547] hover:bg-black/65"
             aria-label="Predchádzajúci obrázok"
           >
             <ChevronLeft size={32} />
@@ -87,7 +87,7 @@ export default function LightboxModal({
               e.stopPropagation();
               onNext();
             }}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 text-white/80 hover:text-white p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+            className="absolute right-4 top-1/2 z-10 -translate-y-1/2 rounded-full border border-[#c9a227]/35 bg-black/45 p-3 text-[#e8c547] transition-colors hover:border-[#e8c547] hover:bg-black/65"
             aria-label="Ďalší obrázok"
           >
             <ChevronRight size={32} />
@@ -114,7 +114,7 @@ export default function LightboxModal({
           </motion.div>
 
           {/* Counter */}
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/70 text-sm">
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm text-[#c9a227]/90">
             {currentIndex + 1} / {images.length}
           </div>
         </motion.div>

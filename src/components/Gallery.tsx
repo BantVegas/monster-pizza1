@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { AlertTriangle } from 'lucide-react';
 import { galleryImages } from '@/data/galleryImages';
 import LightboxModal from './LightboxModal';
 
@@ -16,96 +15,68 @@ export default function Gallery() {
     setLightboxOpen(true);
   };
 
-  const closeLightbox = () => {
-    setLightboxOpen(false);
-  };
+  const closeLightbox = () => setLightboxOpen(false);
 
   const goToPrev = () => {
-    setCurrentImageIndex((prev) =>
-      prev === 0 ? galleryImages.length - 1 : prev - 1
-    );
+    setCurrentImageIndex((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1));
   };
 
   const goToNext = () => {
-    setCurrentImageIndex((prev) =>
-      prev === galleryImages.length - 1 ? 0 : prev + 1
-    );
+    setCurrentImageIndex((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1));
   };
 
   return (
-    <section id="galeria" className="py-20 md:py-28 bg-[#1a1a1a]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="galeria" className="scroll-mt-24 border-t border-[#c9a227]/15 bg-[#2f2b27] py-20 md:py-28">
+      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12 md:mb-16"
+          className="mb-14 text-center"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-            Naše pizze
+          <p className="mb-2 text-xs font-bold uppercase tracking-[0.22em] text-[#e8c547]">Galéria</p>
+          <h2 className="font-serif text-[clamp(2rem,5vw,3.25rem)] font-semibold text-[#f2ebe3]">
+            Chuť, ktorú vidíte
           </h2>
-          <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto">
-            Nahliadnite do našej kuchyne a pozrite si naše výtvory. Kliknite na obrázok pre zväčšenie.
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-[#9a928a]">
+            Kliknite na obrázok pre zväčšenie. Nové vizuály v prémiovom štýle Monster Pizza.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {galleryImages.map((image, index) => (
-            <motion.div
-              key={image.src}
-              initial={{ opacity: 0, y: 30 }}
+            <motion.article
+              key={`${image.src}-${index}`}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="bg-[#2d2d2d] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow"
+              transition={{ delay: index * 0.06 }}
+              className="mp-card-hover overflow-hidden rounded-2xl border border-[#c9a227]/25 bg-black/25 shadow-[0_20px_48px_rgba(0,0,0,0.25)]"
             >
-              <div 
-                className="relative aspect-[4/3] cursor-pointer group"
+              <button
+                type="button"
                 onClick={() => openLightbox(index)}
+                className="group relative block w-full cursor-zoom-in text-left"
               >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                <div className="relative aspect-[4/3] w-full">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    className="object-cover transition duration-500 group-hover:scale-[1.04]"
+                    sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
+                    loading={index < 3 ? 'eager' : 'lazy'}
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent opacity-80 transition group-hover:opacity-100" />
+                </div>
+              </button>
+              <div className="border-t border-[#c9a227]/15 p-5">
+                <h3 className="font-serif text-xl font-semibold text-[#f2ebe3]">{image.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[#9a928a]">{image.description}</p>
               </div>
-              <div className="p-5">
-                <h3 className="text-xl font-bold text-white mb-2">{image.title}</h3>
-                <p className="text-white/70 text-sm mb-3">{image.description}</p>
-                {image.allergens && (
-                  <div className="flex items-start gap-2 text-[#f4a261] text-xs">
-                    <AlertTriangle size={14} className="mt-0.5 flex-shrink-0" />
-                    <span>{image.allergens}</span>
-                  </div>
-                )}
-              </div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
-
-        {/* Allergen Legend */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-12 p-6 bg-[#2d2d2d] rounded-2xl"
-        >
-          <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
-            <AlertTriangle size={18} className="text-[#f4a261]" />
-            Zoznam alergénov
-          </h4>
-          <p className="text-white/60 text-sm leading-relaxed">
-            1 – Obilniny obsahujúce lepok | 2 – Kôrovce | 3 – Vajcia | 4 – Ryby | 
-            5 – Arašidy | 6 – Sója | 7 – Mlieko | 8 – Orechy | 9 – Zeler | 
-            10 – Horčica | 11 – Sezam | 12 – Oxid siričitý | 13 – Vlčí bôb | 14 – Mäkkýše
-          </p>
-        </motion.div>
       </div>
 
       <LightboxModal

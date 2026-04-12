@@ -6,6 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
+    host: 'https://monsterpizza.sk',
     sitemap: 'https://monsterpizza.sk/sitemap.xml',
   };
 }
