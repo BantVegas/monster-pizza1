@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { galleryImages } from '@/data/galleryImages';
+import { galleryImages, prevadzkaMomentPhoto } from '@/data/galleryImages';
 import LightboxModal from './LightboxModal';
 
 export default function Gallery() {
@@ -39,7 +39,9 @@ export default function Gallery() {
             Chuť, ktorú vidíte
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-[#9a928a]">
-            Kliknite na obrázok pre zväčšenie. Nové vizuály v prémiovom štýle Monster Pizza.
+            Rovnaká ponuka ako na jedálnom lístku — veľkosti 33 cm a 50 cm, metrová{' '}
+            <span className="font-semibold text-[#e8c547]/95">One Meter Food</span> osobitne. Kliknite na obrázok pre
+            zväčšenie.
           </p>
         </motion.div>
 
@@ -77,6 +79,33 @@ export default function Gallery() {
             </motion.article>
           ))}
         </div>
+
+        <motion.figure
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mx-auto mt-12 max-w-5xl overflow-hidden rounded-2xl border border-[#c9a227]/25 bg-[#161412]"
+        >
+          <div className="flex justify-center bg-black/80 px-2 py-3 sm:px-4">
+            <img
+              src={prevadzkaMomentPhoto.src}
+              alt={prevadzkaMomentPhoto.alt}
+              width={prevadzkaMomentPhoto.width}
+              height={prevadzkaMomentPhoto.height}
+              className="h-auto max-h-[min(88vh,820px)] w-auto max-w-full rounded-t-xl object-contain"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <figcaption className="border-t border-[#c9a227]/20 px-5 py-5 sm:px-8 sm:py-6">
+            <p className="m-0 text-base font-semibold text-[#f2ebe3] sm:text-lg">Dvaja hostia, štyri pizze</p>
+            <p className="mt-2 m-0 text-sm leading-relaxed text-[#9a928a] sm:text-base">
+              Monster Pizza, Shopping Palace — moment z prevádzky. Jedna pizza len málokedy stačí: keď je
+              cesto chrumkavé, syr ťahavý a partia v poriadku, druhá (a často aj tretia) si na stôl nájde
+              cestu úplne sama. Preto sme tu — od jedného kusu po celý meter.
+            </p>
+          </figcaption>
+        </motion.figure>
       </div>
 
       <LightboxModal

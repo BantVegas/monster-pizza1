@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { Mail, Clock, MapPin } from 'lucide-react';
+import { Mail, Clock, MapPin, Phone } from 'lucide-react';
 import { contactInfo } from '@/data/contactInfo';
 import { SITE_URLS } from '@/data/siteUrls';
 
@@ -57,6 +57,17 @@ export default function Footer() {
               >
                 <Mail size={14} className="mt-0.5 shrink-0 opacity-80" aria-hidden />
                 <span className="break-all">{contactInfo.email}</span>
+              </a>
+              <a
+                href={contactInfo.businessPhoneTel}
+                className="mt-2 flex items-start gap-2 text-xs font-semibold text-[#9a928a] underline-offset-2 hover:text-[#e8c547]"
+                title="Telefonický kontakt"
+              >
+                <Phone size={14} className="mt-0.5 shrink-0 opacity-80" aria-hidden />
+                <span>
+                  <span className="block text-[0.65rem] font-normal text-[#7a726b]">Telefonický kontakt</span>
+                  {contactInfo.businessPhoneDisplay}
+                </span>
               </a>
               <p className="mt-2 flex items-start gap-2 text-xs text-[#9a928a]">
                 <MapPin size={14} className="mt-0.5 shrink-0 opacity-80" aria-hidden />

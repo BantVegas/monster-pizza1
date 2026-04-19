@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mail, Clock, MapPin } from 'lucide-react';
+import { Mail, Clock, MapPin, Phone } from 'lucide-react';
 import { contactInfo } from '@/data/contactInfo';
 
 export default function Contact() {
@@ -32,7 +32,7 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -53,8 +53,29 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.05 }}
+            transition={{ delay: 0.03 }}
             className="rounded-2xl border border-white/[0.1] bg-black/22 p-8 backdrop-blur-xl"
+          >
+            <div className="mb-5 inline-flex size-12 items-center justify-center rounded-xl border border-[#c9a227]/35 bg-[#c9a227]/10 text-[#e8c547]">
+              <Phone size={24} />
+            </div>
+            <h3 className="font-serif text-xl font-semibold text-[#f2ebe3]">Telefonický kontakt</h3>
+            <div className="mt-3">
+              <a
+                href={contactInfo.businessPhoneTel}
+                className="text-lg font-semibold tracking-wide text-[#e8c547] hover:underline"
+              >
+                {contactInfo.businessPhoneDisplay}
+              </a>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.05 }}
+            className="rounded-2xl border border-white/[0.1] bg-black/22 p-8 backdrop-blur-xl md:col-span-2 lg:col-span-1"
           >
             <div className="mb-5 inline-flex size-12 items-center justify-center rounded-xl border border-[#c9a227]/35 bg-[#c9a227]/10 text-[#e8c547]">
               <Mail size={24} />
@@ -75,7 +96,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="rounded-2xl border border-white/[0.1] bg-black/22 p-8 backdrop-blur-xl md:col-span-2"
+            className="rounded-2xl border border-white/[0.1] bg-black/22 p-8 backdrop-blur-xl md:col-span-2 lg:col-span-3"
           >
             <div className="mb-5 inline-flex size-12 items-center justify-center rounded-xl border border-[#c9a227]/35 bg-[#c9a227]/10 text-[#e8c547]">
               <MapPin size={24} />

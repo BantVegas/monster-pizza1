@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Bebas_Neue, Playfair_Display, Source_Sans_3 } from "next/font/google";
 import JsonLd from "@/components/JsonLd";
+import { contactInfo } from "@/data/contactInfo";
 import "./globals.css";
 
 const display = Bebas_Neue({
@@ -39,6 +40,7 @@ const websiteJsonLd = {
     "@type": "Organization",
     name: "Monster Pizza",
     url: "https://monsterpizza.sk",
+    telephone: contactInfo.businessPhoneE164,
     logo: {
       "@type": "ImageObject",
       url: "https://monsterpizza.sk/logo.png",

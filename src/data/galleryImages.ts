@@ -1,4 +1,4 @@
-/** Galéria ako na monsterpizza.eu/galeria — rovnaké položky a cesty k /images/* */
+/** Galéria zladená s jedálnym lístkom (33 / 50 cm) — rovnaká ponuka ako na monsterpizza.eu/menu. */
 export interface GalleryImage {
   src: string;
   alt: string;
@@ -8,70 +8,69 @@ export interface GalleryImage {
 
 export const galleryImages: GalleryImage[] = [
   {
-    title: 'Pikantná pizza s klobásou',
+    title: "Sedliacka · 50 cm",
     description:
-      'Bohatá pikantná pizza s klobásou, červenou cibuľou a cherry paradajkami. Chrumkavá kôrka a roztopený syr — presne taká, akú ju milujete.',
-    src: '/images/pizza-mexicana.jpg',
-    alt: 'Monster Pizza - pikantná pizza s klobásou a červenou cibuľou v krabici',
+      "Paradajkový základ, syr, šunka, saláma, klobása a cibuľa — veľký formát z prevádzky, ideálny na zdieľanie.",
+    src: "/images/pizza-sedliacka.png",
+    alt: "Monster Pizza — Sedliacka pizza 50 cm v krabici",
   },
   {
-    title: 'Smotanová pizza so šunkou',
+    title: "Salámová Classic · 50 cm",
+    description: "Pomodoro, mozzarella a saláma — klasika v prémiovom priemere 50 cm.",
+    src: "/images/pizza-salamova.jpg",
+    alt: "Monster Pizza — Salámová Classic 50 cm",
+  },
+  {
+    title: "Provinciale · 50 cm",
     description:
-      'Jemná smotanová pizza so šunkou, červenou cibuľou a čerstvou pažítkou. Krémový základ, ktorý si zamilujete od prvého kúsku.',
-    src: '/images/pizza-smotanova.jpg',
-    alt: 'Monster Pizza - smotanová pizza so šunkou, cibuľou a pažítkou',
+      "Paprika, saláma, kukurica, feferónky a syr; na želanie bez papričiek alebo navyše s cibuľou.",
+    src: "/images/pizza-posuch.jpg",
+    alt: "Monster Pizza — Provinciale 50 cm",
   },
   {
-    title: 'Vegetariánska s rukolou',
+    title: "Provinciale s Nivou · 50 cm",
+    description: "Šunka, kukurica, cibuľa, syr a plesňový syr Niva na paradajkovom základe.",
+    src: "/images/pizza-bryndzova.jpg",
+    alt: "Monster Pizza — Provinciale s Nivou 50 cm",
+  },
+  {
+    title: "Šunková · kukurica · cibuľa · 50 cm",
+    description: "Pomodoro, šunka, kukurica, cibuľa a syr — výrazná kombinácia z prevádzky.",
+    src: "/images/pizza-mexicana.jpg",
+    alt: "Monster Pizza — šunková pizza s kukuricou a cibuľou 50 cm",
+  },
+  {
+    title: "Prosciutto Crudo · 50 cm",
     description:
-      'Čerstvá vegetariánska pizza s rukolou, cherry paradajkami, kukuricou a balzamikovým krémom. Ľahká, svieža a plná chutí.',
-    src: '/images/pizza-vegetarianska.jpg',
-    alt: 'Monster Pizza - vegetariánska pizza s rukolou, paradajkami a balzamikom',
+      "Mozzarella, prosciutto crudo a čerstvá rukola pridaná po upečení — jemná a výrazná chuť.",
+    src: "/images/pizza-dvojica.jpg",
+    alt: "Monster Pizza — Prosciutto Crudo so rukolou 50 cm",
   },
   {
-    title: 'Dvojica pizz na tanieroch',
+    title: "Trhaná šunka · 33 cm",
+    description: "Paradajkový základ, trhaná šunka a syr — menší priemer, rovnaká poctivosť.",
+    src: "/images/pizza-smotanova.jpg",
+    alt: "Monster Pizza — Trhaná šunka 33 cm",
+  },
+  {
+    title: "Margherita · 33 cm",
+    description: "Pomodoro, mozzarella a bazalka — nestarnúca klasika.",
+    src: "/images/pizza-margherita.jpg",
+    alt: "Monster Pizza — Margherita 33 cm",
+  },
+  {
+    title: "Vegetariána · 33 cm",
     description:
-      'Vegetariánska pizza s rukolou vedľa syrovej pizze so šampiňónmi. Servírované na tanieroch priamo v našej prevádzke v Shopping Palace.',
-    src: '/images/pizza-dvojica.jpg',
-    alt: 'Monster Pizza - dve pizze na tanieroch v prevádzke Shopping Palace Bratislava',
-  },
-  {
-    title: 'Sedliacka pizza',
-    description:
-      'Pomodoro, mozzarella, červená cibuľa, saláma, klobása, slanina a štipka pikantných paprík. Poctivá „sedliacka“ chuť priamo z krabice.',
-    src: '/images/pizza-sedliacka.png',
-    alt: 'Monster Pizza - Sedliacka pizza v krabici s klobásou, salámou, slaninou, červenou cibuľou a syrom',
-  },
-  {
-    title: 'Slovenský posúch',
-    description:
-      'Smotanový základ, syr, oravská slanina a jarná cibuľka. Slovenská klasika v podaní Monster Pizza.',
-    src: '/images/pizza-posuch.jpg',
-    alt: 'Monster Pizza - Slovenský posúch so smotanovým základom a oravskou slaninou',
-  },
-  {
-    title: 'Bryndzová pizza',
-    description:
-      'Smotanový základ, oravská slanina, bryndza a jarná cibuľka. Jedinečná kombinácia slovenskej tradície a talianskej pizze.',
-    src: '/images/pizza-bryndzova.jpg',
-    alt: 'Monster Pizza - Bryndzová pizza s oravskou slaninou a jarnou cibuľkou',
-  },
-  {
-    title: 'Margherita pizza',
-    description: 'Jednoduchá, no dokonalá — pomodoro a syr. Klasika, ktorá nikdy nezklame.',
-    src: '/images/pizza-margherita.jpg',
-    alt: 'Monster Pizza - Margherita pizza s pomodoro a syrom',
-  },
-  {
-    title: 'Salámová Classic pizza',
-    description: 'Pomodoro, syr a peperóny. Obľúbená voľba našich zákazníkov.',
-    src: '/images/pizza-salamova.jpg',
-    alt: 'Monster Pizza - Salámová Classic pizza s peperónmi',
-  },
-  {
-    title: 'Šunková pizza',
-    description: 'Pomodoro, šunka a syr. Jednoduchá a chutná pizza pre celú rodinu.',
-    src: '/images/pizza-sunkova.jpg',
-    alt: 'Monster Pizza - Šunková pizza s pomodoro a šunkou',
+      "Cherry paradajky, paprika, kukurica, rukola a balzamiko — ľahšia voľba bez mäsa.",
+    src: "/images/pizza-vegetarianska.jpg",
+    alt: "Monster Pizza — vegetariánska pizza 33 cm",
   },
 ];
+
+export const prevadzkaMomentPhoto = {
+  src: "/images/prevadzka-styri-pizze.png",
+  alt: "Hostia pri pulte so štyrmi pizzami v Monster Pizza, Shopping Palace",
+  width: 300,
+  height: 399,
+} as const;
+

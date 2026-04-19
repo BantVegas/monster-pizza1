@@ -36,7 +36,6 @@ export default function Home() {
     ],
     servesCuisine: ['Pizza', 'Metrová pizza'],
     knowsAbout: ['Metrová pizza', 'One Meter Food', 'Shopping Palace Bratislava'],
-    priceRange: '€',
   };
 
   return (
