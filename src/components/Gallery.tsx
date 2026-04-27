@@ -80,32 +80,62 @@ export default function Gallery() {
           ))}
         </div>
 
-        <motion.figure
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mx-auto mt-12 max-w-5xl overflow-hidden rounded-2xl border border-[#c9a227]/25 bg-[#161412]"
-        >
-          <div className="flex justify-center bg-black/80 px-2 py-3 sm:px-4">
-            <img
-              src={prevadzkaMomentPhoto.src}
-              alt={prevadzkaMomentPhoto.alt}
-              width={prevadzkaMomentPhoto.width}
-              height={prevadzkaMomentPhoto.height}
-              className="h-auto max-h-[min(88vh,820px)] w-auto max-w-full rounded-t-xl object-contain"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <figcaption className="border-t border-[#c9a227]/20 px-5 py-5 sm:px-8 sm:py-6">
-            <p className="m-0 text-base font-semibold text-[#f2ebe3] sm:text-lg">Dvaja hostia, štyri pizze</p>
-            <p className="mt-2 m-0 text-sm leading-relaxed text-[#9a928a] sm:text-base">
-              Monster Pizza, Shopping Palace — moment z prevádzky. Jedna pizza len málokedy stačí: keď je
-              cesto chrumkavé, syr ťahavý a partia v poriadku, druhá (a často aj tretia) si na stôl nájde
-              cestu úplne sama. Preto sme tu — od jedného kusu po celý meter.
-            </p>
-          </figcaption>
-        </motion.figure>
+        <div className="mx-auto mt-12 grid max-w-5xl gap-6 lg:grid-cols-2">
+          <motion.figure
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="overflow-hidden rounded-2xl border border-[#c9a227]/25 bg-[#161412]"
+          >
+            <div className="flex justify-center bg-black/80 px-2 py-3 sm:px-4">
+              <img
+                src={prevadzkaMomentPhoto.src}
+                alt={prevadzkaMomentPhoto.alt}
+                width={prevadzkaMomentPhoto.width}
+                height={prevadzkaMomentPhoto.height}
+                className="h-auto max-h-[min(88vh,820px)] w-auto max-w-full rounded-t-xl object-contain"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <figcaption className="border-t border-[#c9a227]/20 px-5 py-5 sm:px-8 sm:py-6">
+              <p className="m-0 text-base font-semibold text-[#f2ebe3] sm:text-lg">Dvaja hostia, štyri pizze</p>
+              <p className="mt-2 m-0 text-sm leading-relaxed text-[#9a928a] sm:text-base">
+                Monster Pizza, Shopping Palace — moment z prevádzky. Jedna pizza len málokedy stačí: keď je
+                cesto chrumkavé, syr ťahavý a partia v poriadku, druhá (a často aj tretia) si na stôl nájde
+                cestu úplne sama. Preto sme tu — od jedného kusu po celý meter.
+              </p>
+            </figcaption>
+          </motion.figure>
+
+          <motion.figure
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="overflow-hidden rounded-2xl border border-[#c9a227]/25 bg-[#161412]"
+          >
+            <div className="flex justify-center bg-black/80 px-2 py-3 sm:px-4">
+              <img
+                src="/images/caputo-flour.png"
+                alt="Talianska múka Caputo Pizzeria — Farina di Grano Tenero Tipo 00, používaná v Monster Pizza"
+                width={1200}
+                height={900}
+                className="h-auto max-h-[min(88vh,820px)] w-auto max-w-full rounded-t-xl object-contain"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <figcaption className="border-t border-[#c9a227]/20 px-5 py-5 sm:px-8 sm:py-6">
+              <p className="m-0 text-base font-semibold text-[#f2ebe3] sm:text-lg">Talianska kvalita v každom ceste</p>
+              <p className="mt-2 m-0 text-sm leading-relaxed text-[#9a928a] sm:text-base">
+                Používame výhradne taliansku múku Caputo Pizzeria — Tipo &quot;00&quot;, ktorú si vyberajú
+                najlepšie pizzerie na svete. Kvalitné suroviny priamo z Talianska sú základom každej
+                našej pizze, pretože na chuti sa nešetrí.
+              </p>
+            </figcaption>
+          </motion.figure>
+        </div>
       </div>
 
       <LightboxModal
